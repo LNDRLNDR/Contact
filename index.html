@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LNDRLNDRLNDR</title>
+    <meta name="author" content="LNDRLNDRLNDR">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="LNDRLNDRLNDR maker of CARL, BARL and Custom Rocket League Overlay HUD">
+    <meta name="keywords"
+          content="Rocket League, LNDRLNDRLNDR, CARL, BARL, LNDR, Overlay, HUD">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png"/>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GPS2BDRQ8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+      gtag('config', 'G-7GPS2BDRQ8');
+    </script>
+
+
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            background: transparent;
+            font-family: 'Montserrat', sans-serif;
+            color: #1e1e1e;
+            margin: 0;
+        }
+
+        html {
+            background: #f5f5f5;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-flow: column;
+        }
+
+        main {
+            width: min(90%, 700px);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        h1 {
+            font-weight: 900;
+            margin-bottom: 15px;
+            font-size: 36px;
+        }
+
+        header {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #scroll-to-top {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #scroll-to-top.show {
+            opacity: 1;
+        }
+
+        header {
+            width: 100%;
+            background-color: #1e1e1e;
+            color: white;
+            font-size: 22px;
+        }
+
+        header ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 30px;
+        }
+
+        header li {
+            padding-left: 25px;
+            padding-right: 25px;
+            height: 40px;
+        }
+
+        header li a {
+            display: block;
+            /*padding: 14px 25px 10px 25px;*/
+            text-transform: uppercase;
+            color: #6696fe !important;
+            text-decoration: none !important;
+            font-size: 24px;
+            /*margin: 20px;*/
+            font-weight: 300;
+            transition: all .25s;
+            border-bottom: 3px solid transparent;
+        }
+
+        header li.active a {
+            display: block;
+            /*padding: 14px 25px 10px 25px;*/
+            text-transform: uppercase;
+            color: #f44336 !important;
+            text-decoration: none !important;
+            font-size: 24px;
+            /*margin: 20px;*/
+            font-weight: 300;
+            transition: all .25s;
+            border-bottom: 3px solid #f44336;
+        }
+
+        header li a:hover {
+            display: block;
+            /*padding: 14px 25px 10px 25px;*/
+            text-transform: uppercase;
+            color: #f8982d !important;
+            text-decoration: none !important;
+            font-size: 24px;
+            /*margin: 20px;*/
+            font-weight: 300;
+            transition: all .25s;
+            border-bottom: 3px solid #f8982d;
+        }
+
+        .social_link {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            flex-wrap: wrap;
+        }
+
+        .social_link .social_icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 40px;
+        }
+
+        .social_link .social_icon svg {
+            height: 40px;
+            width: 40px;
+        }
+
+        .social_link .social_name {
+            margin-left: 15px;
+            margin-right: 15px;
+            font-size: 32px;
+
+        }
+
+        .social_link {
+            font-size: 24px;
+            margin-bottom: 5px;
+            word-break: break-all;
+        }
+
+        .social_link a:hover {
+            color: #f8982d;
+            text-decoration: underline;
+        }
+
+        .social_link a {
+            color: #f44336;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <ul>
+        <li title="CARL: Analysis Tool for Rocket League">
+            <a href="https://lndrlndr.github.io/">CARL</a>
+        </li>
+        <li title="BARL: Broadcast Assistant for Rocket League">
+            <a href="https://lndrlndr.github.io/BARL-Overlay/">BARL</a>
+        </li>
+
+
+        <li title="Home"><a href="https://lndrlndr.github.io/lndrlndrlndr">
+            <img style="height: 50px; width: 50px; border-radius: 50%; transform: translateY(-5px)"
+                 alt="LNDRLNDRLNDR" src="https://lndrlndr.github.io/lndrlndrlndr/icon.png"/> </a>
+        </li>
+
+        <li title="Custom Overlays">
+            <a href="https://lndrlndr.github.io/portfolio/">OVERLAYS</a>
+        </li>
+
+        <li class="active" title="Check out my contact information">
+            <a target="_blank" href="https://lndrlndr.github.io/Contact/">CONTACT</a>
+        </li>
+    </ul>
+</header>
+
+<main>
+    <h1>Contact info</h1>
+
+    <div class="social_link">
+        <div class="social_icon">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 122.88 78.607" enable-background="new 0 0 122.88 78.607" xml:space="preserve">
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#1e1e1e"
+                      d="M61.058,65.992l24.224-24.221l36.837,36.836H73.673h-25.23H0l36.836-36.836 L61.058,65.992L61.058,65.992z M1.401,0l59.656,59.654L120.714,0H1.401L1.401,0z M0,69.673l31.625-31.628L0,6.42V69.673L0,69.673z M122.88,72.698L88.227,38.045L122.88,3.393V72.698L122.88,72.698z"/>
+            </svg>
+        </div>
+        <div class="social_name">Email:</div>
+        <div class="social_link"><a target="_blank" href="mailto:lndr.overlays@gmail.com">lndr.overlays@gmail.com</a>
+        </div>
+    </div>
+    <div class="social_link">
+        <div class="social_icon">
+            <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
+                 text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
+                 clip-rule="evenodd" viewBox="0 0 512 462.799">
+                <path fill-rule="nonzero" fill="#1e1e1e"
+                      d="M403.229 0h78.506L310.219 196.04 512 462.799H354.002L230.261 301.007 88.669 462.799h-78.56l183.455-209.683L0 0h161.999l111.856 147.88L403.229 0zm-27.556 415.805h43.505L138.363 44.527h-46.68l283.99 371.278z"/>
+            </svg>
+        </div>
+        <div class="social_name">Twitter/X:</div>
+        <div class="social_link"><a target="_blank" href="https://x.com/LNDRLNDRLNDR">@LNDRLNDRLNDR</a></div>
+    </div>
+    <div class="social_link">
+        <div class="social_icon">
+            <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
+                 text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
+                 clip-rule="evenodd" viewBox="0 0 512 388.049">
+                <path fill-rule="nonzero" fill="#1e1e1e"
+                      d="M433.713 32.491A424.231 424.231 0 00328.061.005c-4.953 8.873-9.488 18.156-13.492 27.509a393.937 393.937 0 00-58.629-4.408c-19.594 0-39.284 1.489-58.637 4.37-3.952-9.33-8.543-18.581-13.525-27.476-36.435 6.212-72.045 17.196-105.676 32.555-66.867 98.92-84.988 195.368-75.928 290.446a425.967 425.967 0 00129.563 65.03c10.447-14.103 19.806-29.116 27.752-44.74a273.827 273.827 0 01-43.716-20.862c3.665-2.658 7.249-5.396 10.712-8.055 40.496 19.019 84.745 28.94 129.514 28.94 44.77 0 89.019-9.921 129.517-28.943 3.504 2.86 7.088 5.598 10.712 8.055a275.576 275.576 0 01-43.796 20.918 311.49 311.49 0 0027.752 44.705 424.235 424.235 0 00129.65-65.019l-.011.011c10.632-110.26-18.162-205.822-76.11-290.55zM170.948 264.529c-25.249 0-46.11-22.914-46.11-51.104 0-28.189 20.135-51.304 46.029-51.304 25.895 0 46.592 23.115 46.15 51.304-.443 28.19-20.336 51.104-46.069 51.104zm170.102 0c-25.29 0-46.069-22.914-46.069-51.104 0-28.189 20.135-51.304 46.069-51.304s46.472 23.115 46.029 51.304c-.443 28.19-20.296 51.104-46.029 51.104z"/>
+            </svg>
+        </div>
+        <div class="social_name">Discord:</div>
+        <div class="social_link"><a target="_blank" href="https://discord.gg/qF5FkJxNdR">lndrlndrlndr</a></div>
+    </div>
+    <div class="social_link">
+        <div class="social_icon">
+            <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
+                 text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
+                 clip-rule="evenodd" viewBox="0 0 640 640">
+                <path d="M633.468 192.038s-6.248-44.115-25.477-63.485c-24.366-25.477-51.65-25.642-64.123-27.118-89.493-6.52-223.904-6.52-223.904-6.52h-.236s-134.352 0-223.893 6.52c-12.52 1.523-39.768 1.63-64.123 27.118-19.24 19.37-25.358 63.485-25.358 63.485S-.012 243.806-.012 295.681v48.509c0 51.768 6.366 103.643 6.366 103.643s6.248 44.114 25.358 63.52c24.355 25.477 56.363 24.65 70.655 27.367 51.237 4.89 217.644 6.366 217.644 6.366s134.529-.237 224.022-6.638c12.52-1.477 39.756-1.63 64.123-27.119 19.24-19.37 25.476-63.532 25.476-63.532S640 396.03 640 344.154v-48.508c-.13-51.769-6.497-103.643-6.497-103.643l-.035.035zm-379.8 211.007V223.173L426.56 313.41l-172.892 89.635z"/>
+            </svg>
+        </div>
+        <div class="social_name">YouTube:</div>
+        <div class="social_link"><a target="_blank" href="https://www.youtube.com/@LNDRLNDR">@LNDRLNDR</a></div>
+    </div>
+    <div class="social_link">
+        <div class="social_icon">
+            <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
+                 text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
+                 clip-rule="evenodd" viewBox="0 0 439 512.167">
+                <g fill-rule="nonzero">
+                    <path fill="#FEFEFE"
+                          d="M402.415 237.792l-73.165 73.166h-73.167l-64.021 64.021v-64.021H109.75V36.585h292.665z"/>
+                    <path fill="#1e1e1e"
+                          d="M402.415 237.792l-73.165 73.166h-73.167l-64.021 64.021v-64.021H109.75V36.585h292.665v201.207zM91.458 0L0 91.457v329.251h109.75v91.458l91.458-91.458h73.167L439 256.083V0H91.458z"/>
+                    <path fill="#1e1e1e"
+                          d="M310.958 210.354h36.584v-109.75h-36.584zM210.354 210.354h36.583v-109.75h-36.583z"/>
+                </g>
+            </svg>
+        </div>
+        <div class="social_name">Twitch:</div>
+        <div class="social_link"><a target="_blank" href="https://www.twitch.tv/lndrlndrlndr">LNDRLNDRLNDR</a></div>
+    </div>
+
+
+    <div style="height: 35px;"></div>
+</main>
+
+<a id="scroll-to-top" href="#" class="btn-floating btn-large waves-effect waves-light red">
+    <i class="material-icons">arrow_upward</i>
+</a>
+</body>
+<script>
+  const scrollToTopButton = document.querySelector('#scroll-to-top');
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    const main = document.querySelector('main');
+    const mainPosition = main.offsetTop;
+
+    if (currentScroll > mainPosition) {
+      scrollToTopButton.classList.add('show');
+    } else {
+      scrollToTopButton.classList.remove('show');
+    }
+  });
+
+  scrollToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+</script>
+</html>
